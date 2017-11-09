@@ -59,6 +59,15 @@ pipeline {
 			}			
 		}
 
+		stage('Promote to green') {
+			agent {
+				label 'apache'
+			}
+			steps {
+				sh "cp /var/www/html/rectangles/all/${env.BRANCH_NAME}/rectangle_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar /var/www/html/rectangles/green/rectangle_${env.BUILD_NUMBER}.jar"
+			}			
+		}
+
 	}
 
 
