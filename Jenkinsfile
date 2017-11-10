@@ -59,7 +59,10 @@ pipeline {
 			// 	sh "java -jar rectangle_${env.BUILD_NUMBER}.jar 3 4"
 			// }
 			label 'apache'
-			echo "Tested in debian"			
+			steps {
+				echo "Tested in debian"	
+			}
+					
 		}
 
 		stage('Promote to green') {
