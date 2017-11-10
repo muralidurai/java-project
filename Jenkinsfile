@@ -108,7 +108,7 @@ pipeline {
         		sh "git push origin rectangle-${env.MAJOR_VERSION}.${env.BUILD_NUMBER}"
 			}
 			post {
-				failure {
+				success {
 					email ext (
 							subject: "${env.JOB_NAME} [${env.BUILD_NUMBER}] Develpment promoted to master !",
 							body: """<p>'${env.JOB_NAME} [${env.BUILD_NUMBER}]' Development Promoted to Master":</p>
