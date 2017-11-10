@@ -58,7 +58,10 @@ pipeline {
 			// 	sh "wget http://muralilalogin1.mylabserver.com/rectangles/all/${env.BRANCH_NAME}/rectangle_${env.BUILD_NUMBER}.jar"
 			// 	sh "java -jar rectangle_${env.BUILD_NUMBER}.jar 3 4"
 			// }
-			label 'apache'
+			agent {
+				label 'apache'
+			}
+			
 			steps {
 				echo "Tested in debian"	
 			}
