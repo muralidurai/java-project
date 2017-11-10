@@ -118,7 +118,10 @@ pipeline {
 				}
 			}			
 		}
-		post {
+
+	}
+
+	post {
 			failure {
 				email ext (
 						subject: "${env.JOB_NAME} [${env.BUILD_NUMBER}] Failed !"
@@ -128,8 +131,6 @@ pipeline {
 					)
 			}
 		}
-
-	}
 
 
 }
